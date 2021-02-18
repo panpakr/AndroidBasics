@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/bCall"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Call" />
+
+    <Button
+        android:id="@+id/blocation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Show Me On Map" />
+
+    <Button
+        android:id="@+id/bWeb"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Go To Google" />
+
+    <Button
+        android:id="@+id/bSendSms"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Send Sms To X" />
+
+    <Button
+        android:id="@+id/bOpenCamera"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="200dp"
+        android:text="Open Camera" />
+
+    <Button
+        android:id="@+id/bPickContact"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Pick Contact" />
+</LinearLayout>
