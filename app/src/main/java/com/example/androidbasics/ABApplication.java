@@ -3,6 +3,10 @@ package com.example.androidbasics;
 import android.app.Application;
 import android.content.res.Configuration;
 
+import com.example.androidbasics.observer.JackObserver;
+import com.example.androidbasics.observer.KingObserver;
+import com.example.androidbasics.observer.QueenObserver;
+import com.example.androidbasics.observer.Subject;
 import com.example.androidbasics.singleton.DoubleLockSingleton;
 import com.example.androidbasics.singleton.EarlyInitSingleton;
 import com.example.androidbasics.singleton.LazyInitSingleton;
@@ -23,6 +27,53 @@ public class ABApplication extends Application {
         testLazyInitSingleton();
         testEarlyInitSingleton();
         testThreadSafeSingleton();
+
+        testSingleObservers();
+        testMultipleObservers();
+
+    }
+
+    private void testMultipleObservers() {
+
+        KingObserver kingObserver = new KingObserver();
+        QueenObserver queenObserver = new QueenObserver();
+        JackObserver jackObserver = new JackObserver();
+        Subject subject = new Subject();
+
+        //Try Registering
+        subject.registerObservers(kingObserver);
+        subject.registerObservers(queenObserver);
+        subject.registerObservers(jackObserver);
+
+        //Try getting update
+        subject.publishPoints();
+
+        //Try Un-Registering
+        subject.unregisterObservers(queenObserver);
+
+        //Try getting update
+        subject.publishPoints();
+    }
+
+    private void testSingleObservers() {
+
+
+
+        KingObserver kingObserver = new KingObserver();
+        Subject subject = new Subject();
+
+        //Try Registering
+        subject.registerObservers(kingObserver);
+
+        //Try getting update
+        subject.publishPoints();
+
+        //Try Un-Registering
+        subject.unregisterObservers(kingObserver);
+
+        //Try getting update
+        subject.publishPoints();
+
     }
 
     private void testThreadSafeSingleton() {
