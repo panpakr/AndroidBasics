@@ -20,8 +20,7 @@ public class ABApplication extends Application {
     public void onCreate() {
         super.onCreate();
 
-        if (BuildConfig.DEBUG)
-            Timber.plant(new DebugTree());
+        Timber.plant();
         Timber.d("onCreate");
 
         testLazyInitSingleton();

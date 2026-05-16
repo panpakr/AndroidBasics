@@ -7,19 +7,21 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.provider.MediaStore;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
+
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.androidbasics.R;
 
 
-public class ImplictCommonActivity extends AppCompatActivity implements View.OnClickListener {
+public class ImplicitCommonActivity extends AppCompatActivity implements View.OnClickListener {
 
 
-    private static final String TAG = ImplictCommonActivity.class.getSimpleName();
+    private static final String TAG = ImplicitCommonActivity.class.getSimpleName();
     private static final boolean DEBUG = true;
 
     private static final int  CAMERA_REQUEST = 101;
@@ -69,37 +71,37 @@ public class ImplictCommonActivity extends AppCompatActivity implements View.OnC
     public void onClick(View v) {
 
         if (DEBUG) Log.d(TAG, "onClick: ");
-        switch (v.getId()) {
-            case R.id.bCall:
-                dialPerson();
-                //callPerson();
-                break;
+//        switch (v.getId()) {
+//            case R.id.bCall:
+//                dialPerson();
+//                //callPerson();
+//                break;
+//
+//            case R.id.blocation:
+//
+//                showMyLocation();
+//                break;
+//            case R.id.bWeb:
+//
+//                showWebUrl();
+//                break;
+//            case R.id.bSendSms:
+//
+//                sendSMS();
+//                break;
+//
+//
+//            case R.id.bOpenCamera:
+//
+//                openCamera();
+//                break;
+//            case R.id.bPickContact:
+//
+//                pickContact();
+//                break;
+//
 
-            case R.id.blocation:
-
-                showMyLocation();
-                break;
-            case R.id.bWeb:
-
-                showWebUrl();
-                break;
-            case R.id.bSendSms:
-
-                sendSMS();
-                break;
-
-
-            case R.id.bOpenCamera:
-
-                openCamera();
-                break;
-            case R.id.bPickContact:
-
-                pickContact();
-                break;
-
-
-        }
+      //  }
 
     }
 
@@ -131,6 +133,7 @@ public class ImplictCommonActivity extends AppCompatActivity implements View.OnC
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
 
+        super.onActivityResult(requestCode, resultCode, data);
         if(requestCode == CAMERA_REQUEST && resultCode ==RESULT_OK){
 
 

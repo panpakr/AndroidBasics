@@ -4,11 +4,12 @@ import android.content.BroadcastReceiver;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.androidbasics.R;
+
+import timber.log.Timber;
 
 public class BroadcastTestingActivity extends AppCompatActivity {
 
@@ -20,7 +21,7 @@ public class BroadcastTestingActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_display);
-        if(DEBUG) Log.d(TAG, "onCreate: ");
+        if(DEBUG) Timber.tag(TAG).d("onCreate: ");
         mBroadcastReceiver = new TestingBroadcastReceiver();
 
     }
@@ -34,7 +35,7 @@ public class BroadcastTestingActivity extends AppCompatActivity {
 
         registerReceiver(mBroadcastReceiver,intentFilter);
 
-        if(DEBUG) Log.d(TAG, "registerReceiver: ");
+        if(DEBUG) Timber.tag(TAG).d("registerReceiver: ");
 
 
 
@@ -46,6 +47,6 @@ public class BroadcastTestingActivity extends AppCompatActivity {
         super.onStop();
        unregisterReceiver(mBroadcastReceiver);
 
-        if(DEBUG) Log.d(TAG, "unregisterReceiver: ");
+        if(DEBUG) Timber.tag(TAG).d("unregisterReceiver: ");
     }
 }

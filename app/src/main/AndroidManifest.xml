@@ -14,15 +14,22 @@
         android:theme="@style/AppTheme">
 
 
-        <activity android:name=".lifecycle.MainActivity"  android:launchMode="singleInstance" >
+        <activity android:name=".lifecycle.MainActivity"
+            android:exported="true"
+            android:launchMode="singleInstance" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
+        <activity android:name=".lifecycle.DisplayActivity">
 
-        <receiver android:name=".broadcastRecievers.TestingBroadcastReceiver">
+        </activity>
+
+
+        <receiver android:name=".broadcastRecievers.TestingBroadcastReceiver"
+            android:exported="false">
             <intent-filter >
                 <action android:name="android.intent.action.BOOT_COMPLETED"></action>
             </intent-filter>
